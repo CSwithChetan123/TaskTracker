@@ -18,7 +18,7 @@ function DashboardScreen({ }) {
             return;
         }
 
-        axios.get('http://localhost:5000/api/tasks', {
+        axios.get('https://tasktracker-c2f6.onrender.com/api/tasks', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

@@ -9,7 +9,7 @@ function LogIn({ setIsLoggedIn, setCurrentView }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(email, password);
-        axios.post("http://localhost:5000/api/auth/login", { email, password })
+        axios.post("https://tasktracker-c2f6.onrender.com/api/auth/login", { email, password })
             .then((response) => {
                 localStorage.setItem("authToken", response.data.token);
 

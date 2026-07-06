@@ -41,7 +41,7 @@ function TaskScreen() {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/tasks', {
+        axios.get('https://tasktracker-c2f6.onrender.com/api/tasks', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("authToken")}`
             }
@@ -95,7 +95,7 @@ function TaskScreen() {
 
     let handleSubmitTask = () => {
         try {
-            axios.post('http://localhost:5000/api/tasks', {
+            axios.post('https://tasktracker-c2f6.onrender.com/api/tasks', {
                 title,
                 description,
                 dueDate,

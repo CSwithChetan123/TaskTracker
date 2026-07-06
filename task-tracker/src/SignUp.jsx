@@ -28,7 +28,7 @@ function SignUp({ changeView, setIsLoggedIn }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(fullName, email, password);
-        axios.post("http://localhost:5000/api/auth/register", { fullName, email, password })
+        axios.post("https://tasktracker-c2f6.onrender.com/api/auth/register", { fullName, email, password })
             .then((response) => {
                 console.log(response.data);
                 if (response.data && response.data.token) {
