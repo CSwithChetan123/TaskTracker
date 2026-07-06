@@ -83,7 +83,7 @@ function TaskCard({ task, setTasks }) {
 
     let handleDeleteTask = (taskId) => {
         try {
-            axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+            axios.delete(`https://tasktracker-c2f6.onrender.com/api/tasks/${taskId}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`
                 }
@@ -101,7 +101,7 @@ function TaskCard({ task, setTasks }) {
 
     let handleEditTast = (taskId) => {
         try {
-            axios.patch(`http://localhost:5000/api/tasks/${taskId}`, {
+            axios.patch(`https://tasktracker-c2f6.onrender.com/api/tasks/${taskId}`, {
                 title,
                 description,
                 dueDate,
@@ -128,7 +128,7 @@ function TaskCard({ task, setTasks }) {
 
     let handleToggleComplete = (taskId) => {
         try {
-            axios.patch(`http://localhost:5000/api/tasks/${taskId}`, {
+            axios.patch(`https://tasktracker-c2f6.onrender.com/api/tasks/${taskId}`, {
                 completed: !task.completed
             },
                 {
