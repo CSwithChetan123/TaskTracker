@@ -1,7 +1,12 @@
+require('dns').setServers(['8.8.8.8', '8.8.4.4']);
+
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 const PORT = 5000;
-require('dotenv').config();
 const mongoose = require('mongoose');
 const dbUrl = process.env.MONGO_DB_URL;
 const Task = require('./models/Task');
@@ -10,11 +15,11 @@ const authRoutes = require('./routes/authRoutes');
 const cors = require('cors');
 
 main()
-    .then(() => console.log('Connected to MongoDB'))
+    .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dbUrl)
 }
 
 app.use(cors());
